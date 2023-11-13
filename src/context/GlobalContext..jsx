@@ -1,12 +1,11 @@
 import { createContext } from "react";
 
-const Context = createContext()
+export const Context = createContext()
 
-const GlobalProvider = () => {
-
+export const GlobalProvider = ({children}) => {
     return(
-        < Context.Provider>
+        <Context.Provider value={{total: 100}}>{children}
         </Context.Provider>
     )
+};
 
-}

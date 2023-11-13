@@ -1,11 +1,20 @@
 import React from "react";
+import { GlobalProvider } from "./context/GlobalContext.";
+import Header from "./components/Header";
+import Transaction from "./components/Transaction";
+import Balance from "./components/Balance";
 
 
 function App() {
   
   return(
-    <div>Hola Mundo</div>
+    <GlobalProvider>
+      <Header/>
+      <Balance/>
+      <Transaction/>
+      <h1>Hola Mundo</h1>
+    </GlobalProvider>
   )
 }
 
-export default App
+export default App;
