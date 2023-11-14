@@ -1,6 +1,10 @@
 import { createContext, useContext, useReducer} from "react"
 import AppReducer from './AppReducer'
 
+const initState = {
+    transactions: []
+}
+
 export const Context = createContext()
 
 export const useGlobalState = () => {
@@ -10,10 +14,10 @@ export const useGlobalState = () => {
 
 export const GlobalProvider = ({children}) => {
 
-    const [state, setState] =  useReducer(AppReducer, [])
+    const [state, setState] =  useReducer(AppReducer, initState);
 
-    return(
-        <Context.Provider value={{state, setState}}>{children}
+    return( 
+        <Context.Provider value={{transactions, setState}}>{children}
         </Context.Provider>
     )
 };
