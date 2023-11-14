@@ -13,10 +13,21 @@ export const useGlobalState = () => {
 }
 
 export const GlobalProvider = ({children}) => {
-    const [state, setState] =  useReducer(AppReducer, initState);
+    const [state, di] =  useReducer(AppReducer, initState);
+
+    // estas funcion servira para ver por consola que se agrego alguna transaction
+    const addTransaction = (description,amount) => {
+        console.log('addTransaction');
+    }
 
     return( 
-        <Context.Provider value={{transactions: state.transactions}}>{children}
+        <Context.Provider 
+        value={{
+            transactions: state.transactions,
+            addTransaction,
+        }}
+        >
+        {children}
         </Context.Provider>
     )
 };
