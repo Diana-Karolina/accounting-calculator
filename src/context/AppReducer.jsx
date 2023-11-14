@@ -4,5 +4,5 @@ switch(action.type){
         return state
     default:
         return state
+  }
 }
- }

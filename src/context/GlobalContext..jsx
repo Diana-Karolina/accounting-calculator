@@ -13,11 +13,10 @@ export const useGlobalState = () => {
 }
 
 export const GlobalProvider = ({children}) => {
-
     const [state, setState] =  useReducer(AppReducer, initState);
 
     return( 
-        <Context.Provider value={{transactions, setState}}>{children}
+        <Context.Provider value={{transactions: state.transactions}}>{children}
         </Context.Provider>
     )
 };
