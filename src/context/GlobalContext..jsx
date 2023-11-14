@@ -13,12 +13,15 @@ export const useGlobalState = () => {
 }
 
 export const GlobalProvider = ({children}) => {
-    const [state, di] =  useReducer(AppReducer, initState);
+    const [state, dispatch] =  useReducer(AppReducer, initState);
 
     // estas funcion servira para ver por consola que se agrego alguna transaction
-    const addTransaction = (description,amount) => {
-        console.log('addTransaction');
-    }
+    const addTransaction = (transaction) => {
+        dispatch({
+            type: 'ADD_TRANSATION',
+            payload: transaction
+        })
+    };
 
     return( 
         <Context.Provider 

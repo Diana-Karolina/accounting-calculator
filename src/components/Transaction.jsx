@@ -15,7 +15,11 @@ function Transaction () {
     //esta funcion servira para que al precionar el button , se vaya al evento del form
     const onSubmit = (e) => {
         e.preventDefault();
-        addTransaction()
+        addTransaction({
+            ide:1,
+            description,
+            amount
+        })
         console.log(description, amount)
     };
 
