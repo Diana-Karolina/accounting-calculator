@@ -11,7 +11,7 @@ function Balance () {
     return(
         <div>
             <h3>Analisis contable</h3>
-            <h1>{totalAmounts}</h1>
+            <h1>${totalAmounts}</h1>
         </div>
     );
 }
