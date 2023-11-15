@@ -14,11 +14,11 @@ function IncomeExpenses() {
   return (
     <>
     <div>
-        <h4>Ingresos</h4>
+        <h4>Mis Ingresos</h4>
         <p>{ingresosAmount}</p>
     </div>
     <div>
-        <h4>Gastos</h4>
+        <h4>Mis Gastos</h4>
         <p>{1500}</p>
     </div>
     </>
