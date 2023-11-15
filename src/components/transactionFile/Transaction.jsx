@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {useGlobalState} from '../context/GlobalContext.'
+import {useGlobalState} from '../../context/GlobalContext.'
 
 function Transaction () {
     
@@ -16,7 +16,7 @@ function Transaction () {
     const onSubmit = (e) => {
         e.preventDefault();
         addTransaction({
-            ide:1,
+            ide:window.crypto.randomUUID(),
             description,
             amount
         })
