@@ -1,7 +1,7 @@
 import {useGlobalState} from '../../context/GlobalContext.'
 
 function ListTransaction () {
-    const {transactions} = useGlobalState()
+    const {transactions, deleteTransaction} = useGlobalState()
 
     return(
         <div>{
@@ -10,7 +10,7 @@ function ListTransaction () {
                     <p>{transaction.description}</p>
                     <span>{transaction.amount}</span>
                     <button onClick={() => {
-                        console.log(transaction.id)
+                        deleteTransaction(transaction.id)
                     }}>
                         Eliminar transaccion
                     </button>

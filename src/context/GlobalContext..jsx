@@ -17,10 +17,10 @@ export const GlobalProvider = ({children}) => {
 
 
     // estas funcion servira para ver por consola la eliminacion de alguna transaction
-    const deleteTransaction = () => {
+    const deleteTransaction = (id) => {
         dispatch({
-            type: 'ADD_TRANSATION',
-            payload: transaction
+            type: 'DELETE_TRANSATION',
+            payload: id
         })
     };
 
@@ -37,6 +37,7 @@ export const GlobalProvider = ({children}) => {
         value={{
             transactions: state.transactions,
             addTransaction,
+            deleteTransaction,
         }}
         >
         {children}

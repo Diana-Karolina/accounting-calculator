@@ -18,7 +18,7 @@ function Transaction () {
         addTransaction({
             ide:window.crypto.randomUUID(),
             description,
-            amount
+            amount: +amount,
         })
         console.log(description, amount)
     };
