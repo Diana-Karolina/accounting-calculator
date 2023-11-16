@@ -10,14 +10,22 @@ function App() {
   
   return(
     <GlobalProvider>
-      <Header/>
-      <IncomeExpenses/>
-      <Balance/>
-      <Transaction/>
-      <ListTransaction/>
-      <h1>Hola Mundo</h1>
+      <div className="bg-zinc-950 text-white h-screen 
+      flex justify-center items-center">
+        <div className="bg-zinc-800 p-10 rounded-lg flex">
+            <div>
+             <Header />
+             <IncomeExpenses />
+             <Balance />
+             <Transaction />
+            </div>
+            <div>
+             <ListTransaction />
+            </div>
+        </div>
+      </div>
     </GlobalProvider>
-  )
+  );
 }
 
 export default App;

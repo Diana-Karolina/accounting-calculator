@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer} from "react"
+import { createContext, useContext, useReducer, useEffect} from "react"
 import AppReducer from './AppReducer'
 
 const initState = {
@@ -13,8 +13,17 @@ export const useGlobalState = () => {
 }
 
 export const GlobalProvider = ({children}) => {
-    const [state, dispatch] =  useReducer(AppReducer, initState);
-
+    const [state, dispatch] =  useReducer(AppReducer, initState,
+        () => {
+            const localData = localStorage.getItem('transaction');
+            
+           return localData? JSON.parse(localData) : initState;
+        });
+    
+    //Servira para guardar informacion la cual se la asigne
+    useEffect(()=> {
+        localStorage.setItem('transactions', JSON.stringify(state))
+    },[state])    
 
     // estas funcion servira para ver por consola la eliminacion de alguna transaction
     const deleteTransaction = (id) => {

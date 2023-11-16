@@ -7,11 +7,18 @@ function IncomeExpenses() {
     
     const amounts = transactions.map((transaction) => transaction.amount);
     
+    //esta funcion sirve para ver los montos en positivos
     const ingresosAmount = amounts
-    .filter(item => item > 0)
+    .filter((item)=> item > 0)
     .reduce((acc, item) => (acc += item), 0);
 
-  return (
+
+    //esta funcion sirve para ver los montos en positivos
+    const egresosAmount = amounts
+    .filter((item)=> item <0)
+    .reduce((acc,item) => acc += item , 0) * -1;
+
+    return (
     <>
     <div>
         <h4>Mis Ingresos</h4>
@@ -19,7 +26,7 @@ function IncomeExpenses() {
     </div>
     <div>
         <h4>Mis Gastos</h4>
-        <p>{1500}</p>
+        <p>{egresosAmount}</p>
     </div>
     </>
   )
