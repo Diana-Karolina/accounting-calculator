@@ -15,7 +15,7 @@ export function ItemTransaction({transaction}) {
         deleteTransaction(transaction.id);
         }}
         >
-        x
+          x
     </button>
     </div>
   </li>
