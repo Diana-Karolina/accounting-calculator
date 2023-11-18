@@ -8,7 +8,7 @@ function ListTransaction () {
     <>
     <h3 className='text-slate-300 text-xl font-bold w-full'>History</h3>
     
-    <ul className='bg-red-500 w-full'>
+    <ul>
         {transactions.map((transaction) => (
           <ItemTransaction transaction={transaction} key={transaction.id}/>
         ))}

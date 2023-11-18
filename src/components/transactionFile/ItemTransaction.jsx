@@ -1,6 +1,6 @@
 import { useGlobalState } from '../../context/GlobalContext.';
 
-function ItemTransaction ({transaction}) {
+export function ItemTransaction ({transaction}) {
   const {deleteTransaction} = useGlobalState();
 
   return (
@@ -18,7 +18,7 @@ function ItemTransaction ({transaction}) {
     </button>
     </div>
   </li>
-  )
+  );
 }
 
 export default ItemTransaction;
