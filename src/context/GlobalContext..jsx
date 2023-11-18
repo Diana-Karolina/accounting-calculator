@@ -1,16 +1,16 @@
 import { createContext, useContext, useReducer, useEffect} from "react"
-import AppReducer from './AppReducer'
+import AppReducer from './AppReducer';
 
 const initState = {
-    transactions: []
-}
+    transactions: [],
+};
 
-export const Context = createContext()
+export const Context = createContext();
 
 export const useGlobalState = () => {
-   const context = useContext(Context)
-    return context
-}
+   const context = useContext(Context);
+    return context;
+};
 
 export const GlobalProvider = ({children}) => {
     const [state, dispatch] =  useReducer(AppReducer, initState,
@@ -25,19 +25,21 @@ export const GlobalProvider = ({children}) => {
         localStorage.setItem('transactions', JSON.stringify(state))
     },[state])    
 
-    // estas funcion servira para ver por consola la eliminacion de alguna transaction
-    const deleteTransaction = (id) => {
-        dispatch({
-            type: 'DELETE_TRANSATION',
-            payload: id
-        })
-    };
 
     // estas funcion servira para ver por consola que se agrego alguna transaction
     const addTransaction = (transaction) => {
         dispatch({
-            type: 'ADD_TRANSATION',
-            payload: transaction
+            type: 'ADD_TRANSACTION',
+            payload: transaction,
+        })
+    };
+
+
+    // estas funcion servira para ver por consola la eliminacion de alguna transaction
+    const deleteTransaction = (id) => {
+        dispatch({
+            type: 'DELETE_TRANSACTION',
+            payload: id
         })
     };
 
@@ -51,6 +53,6 @@ export const GlobalProvider = ({children}) => {
         >
         {children}
         </Context.Provider>
-    )
+    );
 };
 

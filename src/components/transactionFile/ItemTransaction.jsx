@@ -1,7 +1,6 @@
-import React from 'react'
 import { useGlobalState } from '../../context/GlobalContext.';
 
-export function ItemTransaction({transaction}) {
+function ItemTransaction ({transaction}) {
   const {deleteTransaction} = useGlobalState();
 
   return (
@@ -22,4 +21,4 @@ export function ItemTransaction({transaction}) {
   )
 }
 
-export default ItemTransaction
+export default ItemTransaction;

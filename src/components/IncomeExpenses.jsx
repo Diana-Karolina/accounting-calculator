@@ -10,14 +10,14 @@ function IncomeExpenses() {
     
     //esta funcion sirve para ver los montos en positivos
     const ingresosAmount = amounts
-    .filter((item)=> item > 0)
+    .filter((item) => item > 0)
     .reduce((acc, item) => (acc += item), 0) 
     .toFixed(2);
 
     //esta funcion sirve para ver los montos en positivos
     const egresosAmount = amounts
     .filter((item)=> item < 0)
-    .reduce((acc,item) => acc += item , 0) 
+    .reduce((acc,item) => acc += item , 0)
     .toFixed(2) * -1;
 
     return (

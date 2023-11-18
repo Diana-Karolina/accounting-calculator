@@ -7,7 +7,7 @@ function Balance () {
     const amounts = transactions.map(transaction => transaction.amount)
 
     const totalAmounts = amounts.reduce((acc, item) => (acc += item),0)
-
+ 
     return(
         <div className="flex justify-between">
             <h3>Analisis contable</h3>

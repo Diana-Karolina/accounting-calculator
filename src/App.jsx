@@ -1,7 +1,6 @@
 import React from "react";
 import { GlobalProvider } from "./context/GlobalContext.";
-import Header from "./components/Header";
-import Transaction from "./components/transactionFile/Transaction";
+import TransactionForm from "./components/transactionFile/TransactionForm";
 import Balance from "./components/Balance";
 import ListTransaction from "./components/transactionFile/ListTransaction";
 import IncomeExpenses from "./components/IncomeExpenses";
@@ -15,14 +14,13 @@ function App() {
         <div className="container mx-auto w-3/6">
         <div className="bg-zinc-800 p-10 rounded-lg flex gap-x-2">
             <div>
-             <h1 className="font-bold">
-              Seguimiento de Gastos
+             <h1 className="text-4x1 font-bold">Seguimiento de Gastos
              </h1>
              <IncomeExpenses />
              <Balance />
-             <Transaction />
+             <TransactionForm />
             </div>
-            <div>
+            <div className="bg-red-400 w-full">
             <ListTransaction />
             </div>
         </div>
