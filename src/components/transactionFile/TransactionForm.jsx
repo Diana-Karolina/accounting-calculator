@@ -7,7 +7,7 @@ function TransactionForm () {
     const {addTransaction} = useGlobalState();
 
     //este estado sirve para añadir los ingresos y gastos
-    const [description,setDescription] = useState();
+    const [description,setDescription] = useState("");
 
     //este estado servira para colocar el monto
     const [amount, setAmount] = useState(0);
@@ -20,7 +20,8 @@ function TransactionForm () {
             description,
             amount: +amount,
         })
-        console.log(description, amount)
+        setAmount(0);
+        setDescription("");
     };
 
 
@@ -33,6 +34,7 @@ function TransactionForm () {
             onChange={(e) => setDescription (e.target.value)} 
             className="bg-zinc-600 text-white px-3 py-2 rounded-lg
             block mb-2 w-full"
+            value={description}
             />
           
             <input 
@@ -42,6 +44,7 @@ function TransactionForm () {
             onChange={(e) => setAmount(e.target.value)}
             className="bg-zinc-600 text-white px-3 py-2 rounded-lg
             block mb-2 w-full"
+            value={amount}
             />
 
             <button className="bg-indigo-700 text-white px-3
