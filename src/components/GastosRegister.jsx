@@ -22,7 +22,7 @@ const porcentajeIngresos = 100 - porcentajeGastos;
 
     return (
     <VictoryPie
-    colorScale={["#2E86C1 ","#229954 "]}
+    colorScale={["#41B8D5","#2D8BBA","#2D8BBA"]}
       data={[
         { x: 'Gastos', y: porcentajeGastos},
         { x: 'Ingresos', y: porcentajeIngresos},
